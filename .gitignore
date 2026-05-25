@@ -28,8 +28,11 @@ migrate_working_dir/
 .pub/
 /build/
 
-# Generated files (mockito mocks, build_runner output)
+# Generated files (build_runner, drift, mockito)
 *.mocks.dart
+*.g.dart
+*.freezed.dart
+*.gr.dart
 
 # Android
 **/android/**/gradle-wrapper.jar
@@ -39,6 +42,9 @@ migrate_working_dir/
 **/android/gradlew.bat
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
+**/android/key.properties
+**/android/**/*.keystore
+**/android/**/*.jks
 
 # iOS
 **/ios/**/*.mode1v3
@@ -59,10 +65,37 @@ migrate_working_dir/
 **/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/Podfile.lock
+**/ios/Pods/
 
-# Environment
+# macOS
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+
+# Web
+**/web/flutter_service_worker.js
+
+# Windows
+**/windows/flutter/generated_plugin_registrant.cc
+**/windows/flutter/generated_plugin_registrant.h
+**/windows/flutter/generated_plugins.cmake
+
+# Linux
+**/linux/flutter/generated_plugin_registrant.cc
+**/linux/flutter/generated_plugin_registrant.h
+**/linux/flutter/generated_plugins.cmake
+
+# Environment & secrets
 .env
 .env.*
+*.pem
+*.p12
+google-services.json
+GoogleService-Info.plist
 
 # FVM Version Cache
 .fvm/
+
+# Coverage
+coverage/
+lcov.info
