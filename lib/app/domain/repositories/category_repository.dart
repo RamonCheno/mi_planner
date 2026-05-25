@@ -1,0 +1,24 @@
+import 'package:miplanner_v2/app/domain/entities/category_entity.dart';
+
+// ┌─────────────────────────────────────────────────────────────────────────┐
+// │  CAPA: Domain  →  Repository (Contrato / Interfaz)                      │
+// └─────────────────────────────────────────────────────────────────────────┘
+//
+// ¿Qué es esto?
+//   Es una LISTA DE PROMESAS. Le dice al resto de la app:
+//   "Existen estas operaciones para Category: obtener todos, buscar por id,
+//    guardar y eliminar."
+//   Pero NO dice cómo se hacen. Eso es trabajo de RepositoryImpl (capa Data).
+//
+// ¿Por qué separarlo así?
+//   Porque si mañana cambias de una API REST a Firebase,
+//   solo cambias RepositoryImpl. El resto de la app no se entera.
+//
+// TODO: Agrega más métodos si tu negocio los necesita.
+abstract class CategoryRepository {
+  Future<List<CategoryEntity>> getAll();
+  Future<CategoryEntity?> getById(int id);
+  Future<int> save(CategoryEntity entity);
+  Future<bool> update(CategoryEntity entity);
+  Future<bool> delete(int id);
+}
